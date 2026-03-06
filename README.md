@@ -73,17 +73,17 @@ Fix 5 was the decisive insight. The original pipeline computed `lnP_dm = lnP −
 
 ## Key Design Choices
 
-**Time-ordered cross-fitting (`shuffle=False`)** — prevents future price leaking into nuisance training; produces uncontaminated out-of-fold residuals (Neyman orthogonality).
+- **Time-ordered cross-fitting (`shuffle=False`)** — prevents future price leaking into nuisance training; produces uncontaminated out-of-fold residuals (Neyman orthogonality).
 
-**HC3 robust standard errors** — leverage-adjusted sandwich estimator for valid inference across 54 heterogeneous markets.
+- **HC3 robust standard errors** — leverage-adjusted sandwich estimator for valid inference across 54 heterogeneous markets.
 
-**Configurable model backends** — `make_price_model()` / `make_qty_model()` factories allow independent model selection (`gbm | huber | ridge | rf`) without touching pipeline logic.
+- **Configurable model backends** — `make_price_model()` / `make_qty_model()` factories allow independent model selection (`gbm | huber | ridge | rf`) without touching pipeline logic.
 
 ---
 
 ## Honest Limitations
 
-- `r2_price = 0.282` is marginal. PE magnitudes are likely attenuated (weak-instrument analogy); treat as lower bounds on true elasticity.
+- **`r2_price = 0.282` is marginal.** PE magnitudes are likely attenuated (weak-instrument analogy); treat as lower bounds on true elasticity.
 - Wholesale costs, competitor pricing, and retailer promo calendars are unobservable in this dataset — a structural ceiling, not a modeling gap.
 - Cross-outlet lagged price features are the most tractable path to push R² toward 0.40+.
 
