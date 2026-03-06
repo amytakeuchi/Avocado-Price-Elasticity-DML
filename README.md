@@ -13,7 +13,7 @@ Standard regression can't estimate price elasticity causally — price and deman
 1. **Stage 1 — Residualise:** Learn `E[lnP | X]` and `E[lnQ | X]` via K-fold cross-fitting. Subtract to get "unexpected" price and demand shocks.
 2. **Stage 2 — Identify:** Regress demand residuals on price residuals. The slope is the causal PE, free of confounding.
 
-**Why this matters at scale:** Price elasticity and promo lift estimation underpin pricing strategy at Instacart, DoorDash, Amazon Fresh, and similar platforms — where a 1% error in PE translates directly to revenue loss.
+**Why this matters at scale:** Price elasticity and promo lift estimation underpin pricing strategy at marketplace platforms like Instacart, DoorDash, Amazon Fresh, and similar platforms — where a 1% error in PE translates directly to revenue loss.
 
 ---
 
