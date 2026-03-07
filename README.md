@@ -2,7 +2,7 @@
 
 Causal estimation of **own-price elasticity (PE)** and **promotional demand multiplier (TPRC)** across 54 U.S. markets using Double Machine Learning — with a full pipeline debug that lifted nuisance model R² from **0.003 → 0.282** (94×).
 
-> 📝 **Debugging write-up:** [How I lifted R² 94× by removing one preprocessing step →]([https://your-blog-link-here.com](https://medium.com/@a.takeuchi121/debugging-a-broken-causal-pipeline-how-a-frisch-waugh-lovell-insight-lifted-r%C2%B2-from-0-003-to-0-282-88a1559341bf))
+> 📝 **Debugging write-up:** [How I lifted R² 94× by removing one preprocessing step →]([https://medium.com/@a.takeuchi121/debugging-a-broken-causal-pipeline-how-a-frisch-waugh-lovell-insight-lifted-r%C2%B2-from-0-003-to-0-282-88a1559341bf])
 
 ---
 
