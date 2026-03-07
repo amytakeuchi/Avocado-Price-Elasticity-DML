@@ -2,7 +2,7 @@
 
 Causal estimation of **own-price elasticity (PE)** and **promotional demand multiplier (TPRC)** across 54 U.S. markets using Double Machine Learning — with a full pipeline debug that lifted nuisance model R² from **0.003 → 0.282** (94×).
 
-> 📝 **Debugging write-up:** [How I lifted R² 94× by removing one preprocessing step →](https://your-blog-link-here.com)
+> 📝 **Debugging write-up:** [How I lifted R² 94× by removing one preprocessing step →]([https://your-blog-link-here.com](https://medium.com/@a.takeuchi121/debugging-a-broken-causal-pipeline-how-a-frisch-waugh-lovell-insight-lifted-r%C2%B2-from-0-003-to-0-282-88a1559341bf))
 
 ---
 
@@ -67,7 +67,7 @@ Five root causes identified from EDA, each generating a targeted fix:
 | **4** | Outlier price spikes dominate squared-error loss | `HuberRegressor` option for price first stage | ↓ Variance |
 | **5 ★** | Pre-demeaning by outlet + outlet dummies in X = double-removal of all geographic signal | `demean_mode='none'` — raw lnP as treatment; FWL theorem guarantees equivalence | ↓ Bias (decisive) |
 
-Fix 5 was the decisive insight. The original pipeline computed `lnP_dm = lnP − mean(lnP per outlet)`, stripping all between-city variation before the nuisance model ran — then re-added outlet dummies to X. The **Frisch-Waugh-Lovell theorem** shows these are algebraically equivalent; doing both left only ~3 distinct price levels per outlet across 143 weeks, a near-flat signal no model can predict. Setting `demean_mode='none'` restored full signal to the nuisance model. → [Full write-up](https://your-blog-link-here.com)
+Fix 5 was the decisive insight. The original pipeline computed `lnP_dm = lnP − mean(lnP per outlet)`, stripping all between-city variation before the nuisance model ran — then re-added outlet dummies to X. The **Frisch-Waugh-Lovell theorem** shows these are algebraically equivalent; doing both left only ~3 distinct price levels per outlet across 143 weeks, a near-flat signal no model can predict. Setting `demean_mode='none'` restored full signal to the nuisance model. → [Full write-up]([https://your-blog-link-here.com](https://medium.com/@a.takeuchi121/debugging-a-broken-causal-pipeline-how-a-frisch-waugh-lovell-insight-lifted-r%C2%B2-from-0-003-to-0-282-88a1559341bf))
 
 ---
 
