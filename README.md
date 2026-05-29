@@ -7,7 +7,8 @@ Causal estimation of **own-price elasticity (PE)** and **promotional demand mult
 ---
 
 ## What This Is
-
+Retailers and marketplace platforms lose revenue daily by pricing from intuition rather than causal evidence — because standard regression conflates correlation with causation (endogeneity). This project applies Double Machine Learning (DML) to the Kaggle Avocado Prices dataset (90,000+ weekly records, 54 U.S. markets) to recover causally valid own-price elasticity (PE) and promotional demand multiplier (TPRC) estimates for three avocado SKUs across Online and Offline channels.
+ 
 Standard regression can't estimate price elasticity causally — price and demand are simultaneously determined (endogeneity). This project implements **Double Machine Learning (DML)** to recover a causal PE estimate:
 
 1. **Stage 1 — Residualise:** Learn `E[lnP | X]` and `E[lnQ | X]` via K-fold cross-fitting. Subtract to get "unexpected" price and demand shocks.
